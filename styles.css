@@ -538,6 +538,152 @@ nav {
     color: #45a049;
 }
 
+/* 联系区域样式 */
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-item:hover {
+    background-color: #f8f9fa;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    color: white;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.contact-details strong {
+    color: #333;
+    font-size: 1rem;
+}
+
+.contact-details span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 表单样式 */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* 教育&技能区域样式 */
 .education-skills-section {
     padding: 4rem 2rem;
@@ -701,6 +847,49 @@ nav {
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* 联系区域暗色主题样式 */
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form {
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .contact-info h3,
+[data-theme="dark"] .contact-form h3 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .contact-details strong {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .contact-details span {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .contact-item:hover {
+    background-color: #3d3d3d;
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+    background-color: #2d2d2d;
+    border-color: #555;
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.1);
+}
+
 /* 响应式设计 - 移动端适配 */
 @media (max-width: 768px) {
     nav {
@@ -779,6 +968,26 @@ nav {
     }
 
     .strength-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 0.8rem;
+    }
+
+    .contact-icon {
+        width: 35px;
+        height: 35px;
         font-size: 1.2rem;
     }
 }
