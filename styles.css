@@ -101,6 +101,9 @@ nav {
     --card-bg: #2d2d2d;
     --card-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     --section-bg: #242424;
+    --text-secondary: #cccccc;
+    --text-tertiary: #999999;
+    --placeholder-color: #888888;
 }
 
 [data-theme="dark"] body {
@@ -123,7 +126,7 @@ nav {
 }
 
 [data-theme="dark"] .project-card p {
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 [data-theme="dark"] .about-section,
@@ -135,6 +138,79 @@ nav {
 [data-theme="dark"] footer {
     background-color: #2d2d2d;
     color: var(--text-color);
+}
+
+/* 占位符文字样式 - 增强暗色主题可读性 */
+[data-theme="dark"] .experience-card h3,
+[data-theme="dark"] .experience-position,
+[data-theme="dark"] .project-card h3,
+[data-theme="dark"] .project-background h4,
+[data-theme="dark"] .project-responsibilities h4,
+[data-theme="dark"] .project-achievements h4,
+[data-theme="dark"] .education-item h4,
+[data-theme="dark"] .education-column h3,
+[data-theme="dark"] .skills-column h3,
+[data-theme="dark"] .skills-category h4 {
+    color: var(--text-color);
+}
+
+/* 改善暗色主题下所有文字的可读性 */
+[data-theme="dark"] .experience-section h2,
+[data-theme="dark"] .projects-section h2,
+[data-theme="dark"] .education-skills-section h2 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .experience-responsibilities li,
+[data-theme="dark"] .project-background p,
+[data-theme="dark"] .project-responsibilities li,
+[data-theme="dark"] .project-achievements li,
+[data-theme="dark"] .education-description {
+    color: var(--text-secondary);
+}
+
+/* 占位符文字特殊样式 - 确保在暗色主题下清晰可见 */
+[data-theme="dark"] .experience-card h3,
+[data-theme="dark"] .experience-position,
+[data-theme="dark"] .project-card h3,
+[data-theme="dark"] .project-background p,
+[data-theme="dark"] .education-item h4,
+[data-theme="dark"] .education-description {
+    color: var(--text-secondary);
+    opacity: 0.9;
+}
+
+/* 改善项目经历栏目中所有文字的可读性 */
+[data-theme="dark"] .project-card {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .project-card h3 {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .project-background h4,
+[data-theme="dark"] .project-responsibilities h4,
+[data-theme="dark"] .project-achievements h4 {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .project-background p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .project-responsibilities li,
+[data-theme="dark"] .project-achievements li {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .project-period {
+    background: #3d3d3d;
+    color: var(--text-secondary);
+    border: 1px solid #555;
 }
 
 /* 滚动浮现动画 */
@@ -200,6 +276,90 @@ nav {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* 工作经历区域样式 */
+.experience-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+}
+
+.experience-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.experience-header h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+}
+
+.experience-period {
+    color: #666;
+    font-size: 0.9rem;
+    background: #f8f9fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.experience-position {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.experience-responsibilities {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-responsibilities li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.experience-responsibilities li::before {
+    content: '•';
+    color: #4CAF50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
 /* 项目展示区域样式 */
 .projects-section {
     padding: 4rem 2rem;
@@ -215,7 +375,7 @@ nav {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -227,7 +387,6 @@ nav {
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
 }
 
 .project-card:hover {
@@ -235,16 +394,71 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
 }
 
-.project-card p {
+.project-header h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+}
+
+.project-period {
     color: #666;
+    font-size: 0.9rem;
+    background: #f8f9fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.project-background,
+.project-responsibilities,
+.project-achievements {
     margin-bottom: 1.5rem;
+}
+
+.project-background h4,
+.project-responsibilities h4,
+.project-achievements h4 {
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.project-background p {
+    color: #666;
     line-height: 1.6;
+    margin: 0;
+}
+
+.project-responsibilities ul,
+.project-achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-responsibilities li,
+.project-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.project-responsibilities li::before,
+.project-achievements li::before {
+    content: '•';
+    color: #4CAF50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 .project-link {
@@ -257,6 +471,154 @@ nav {
 
 .project-link:hover {
     color: #45a049;
+}
+
+/* 教育&技能区域样式 */
+.education-skills-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+}
+
+.education-skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.education-skills-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-column h3,
+.skills-column h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.education-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.education-item h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.education-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.education-degree {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.education-period {
+    color: #666;
+    font-size: 0.9rem;
+    background: #f8f9fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+.education-description {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.skills-category {
+    margin-bottom: 2rem;
+}
+
+.skills-category h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+/* 黑暗模式样式 - 新增栏目 */
+[data-theme="dark"] .experience-section,
+[data-theme="dark"] .education-skills-section {
+    background-color: var(--section-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .experience-card,
+[data-theme="dark"] .education-item {
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .experience-card h3,
+[data-theme="dark"] .education-item h4,
+[data-theme="dark"] .education-column h3,
+[data-theme="dark"] .skills-column h3,
+[data-theme="dark"] .skills-category h4 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .experience-period,
+[data-theme="dark"] .project-period,
+[data-theme="dark"] .education-period {
+    background: #3d3d3d;
+    color: #cccccc;
+}
+
+[data-theme="dark"] .experience-responsibilities li,
+[data-theme="dark"] .project-background p,
+[data-theme="dark"] .project-responsibilities li,
+[data-theme="dark"] .project-achievements li,
+[data-theme="dark"] .education-description {
+    color: #cccccc;
+}
+
+[data-theme="dark"] .experience-position {
+    color: #66bb6a;
+}
+
+[data-theme="dark"] .education-degree {
+    color: #66bb6a;
 }
 
 /* 响应式设计 - 移动端适配 */
@@ -289,12 +651,67 @@ nav {
         font-size: 1.1rem;
     }
 
+    .experience-grid,
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
+    .experience-card,
     .project-card {
         padding: 1.5rem;
+    }
+
+    .experience-header,
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .experience-period,
+    .project-period {
+        align-self: flex-start;
+    }
+
+    .education-skills-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .education-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .skills-list {
+        justify-content: flex-start;
+    }
+}
+
+/* 小屏幕设备适配 */
+@media (max-width: 480px) {
+    .experience-section h2,
+    .projects-section h2,
+    .education-skills-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .experience-card,
+    .project-card,
+    .education-item {
+        padding: 1rem;
+    }
+
+    .education-column h3,
+    .skills-column h3 {
+        font-size: 1.5rem;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
 }
