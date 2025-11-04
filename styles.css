@@ -129,7 +129,7 @@ nav {
     color: var(--text-secondary);
 }
 
-[data-theme="dark"] .about-section,
+[data-theme="dark"] .strengths-section,
 [data-theme="dark"] .contact-section {
     background-color: var(--section-bg);
     color: var(--text-color);
@@ -274,6 +274,71 @@ nav {
     background-color: #45a049;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 个人优势区域样式 */
+.strengths-section {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.strengths-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.strength-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.strength-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.strength-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.strength-card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.strength-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 /* 工作经历区域样式 */
@@ -502,33 +567,31 @@ nav {
     text-align: center;
 }
 
-.education-item {
+/* 教育卡片样式 */
+.education-card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.education-item h4 {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 0.8rem;
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.education-details {
+.education-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
 }
 
-.education-degree {
-    color: #4CAF50;
-    font-weight: bold;
-    font-size: 1rem;
+.education-header h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
 }
 
 .education-period {
@@ -537,12 +600,21 @@ nav {
     background: #f8f9fa;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
+    white-space: nowrap;
 }
 
-.education-description {
+.education-degree {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.education-honors {
     color: #666;
-    line-height: 1.6;
-    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-style: italic;
 }
 
 .skills-category {
@@ -584,14 +656,16 @@ nav {
 }
 
 [data-theme="dark"] .experience-card,
-[data-theme="dark"] .education-item {
+[data-theme="dark"] .education-card,
+[data-theme="dark"] .strength-card {
     background-color: var(--card-bg);
     box-shadow: var(--card-shadow);
     color: var(--text-color);
 }
 
 [data-theme="dark"] .experience-card h3,
-[data-theme="dark"] .education-item h4,
+[data-theme="dark"] .education-card h4,
+[data-theme="dark"] .strength-card h3,
 [data-theme="dark"] .education-column h3,
 [data-theme="dark"] .skills-column h3,
 [data-theme="dark"] .skills-category h4 {
@@ -602,15 +676,16 @@ nav {
 [data-theme="dark"] .project-period,
 [data-theme="dark"] .education-period {
     background: #3d3d3d;
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 [data-theme="dark"] .experience-responsibilities li,
 [data-theme="dark"] .project-background p,
 [data-theme="dark"] .project-responsibilities li,
 [data-theme="dark"] .project-achievements li,
-[data-theme="dark"] .education-description {
-    color: #cccccc;
+[data-theme="dark"] .education-honors,
+[data-theme="dark"] .strength-card p {
+    color: var(--text-secondary);
 }
 
 [data-theme="dark"] .experience-position {
@@ -619,6 +694,11 @@ nav {
 
 [data-theme="dark"] .education-degree {
     color: #66bb6a;
+}
+
+[data-theme="dark"] .strength-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* 响应式设计 - 移动端适配 */
@@ -652,13 +732,15 @@ nav {
     }
 
     .experience-grid,
-    .projects-grid {
+    .projects-grid,
+    .strengths-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
     .experience-card,
-    .project-card {
+    .project-card,
+    .strength-card {
         padding: 1.5rem;
     }
 
@@ -687,6 +769,17 @@ nav {
 
     .skills-list {
         justify-content: flex-start;
+    }
+
+    .strength-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .strength-card h3 {
+        font-size: 1.2rem;
     }
 }
 
